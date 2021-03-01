@@ -1,7 +1,10 @@
 import adafruit_dht as adafruit_dht
 import  RPI.GPIO as GPIO
 import time
+<<<<<<< HEAD
 import serialize as s
+=======
+>>>>>>> e34cf2b5a85f4010696ea98c08b1c18514a3feb5
 from pymongo import MongoClient
 
 client = MongoClient("mongodb://127.0.0.1:27017/")
@@ -22,6 +25,10 @@ class SensoresObject():
         self.sensores = [{"_id":dht11id, "valor":0, "nombre":"dth11", "tipo": "", "puerto_1":6, "puerto_2":0},
         {"id":hc_sr04id, "valor":0, "nombre":"hc-sr04", "tipo": "", "puerto_1":23, "puerto_2":24},
         {"id":pirid, "valor":0, "nombre":"pir", "tipo": "", "puerto_1":21, "puerto_2":0}]
+<<<<<<< HEAD
+=======
+
+>>>>>>> e34cf2b5a85f4010696ea98c08b1c18514a3feb5
         #for x in self.sensores:
          #   d = "insert into valores (sensor_id, x.tipo) values (x.valor, x.id)"
             #ejemplo del profe
@@ -100,7 +107,11 @@ class SensoresObject():
             
     def getValores(self):
         data = self.getTemp_Hum()
+<<<<<<< HEAD
         sensores = s.serialize.leerArchivo("sensores")
+=======
+        sensores = []
+>>>>>>> e34cf2b5a85f4010696ea98c08b1c18514a3feb5
         sPIR = self.getDistanciapir()
         ultrasonico = self.getDistancia()
         if data:
@@ -108,5 +119,8 @@ class SensoresObject():
                 sensores.append(x)
         sensores.append(sPIR)
         sensores.append(ultrasonico)
+<<<<<<< HEAD
         s.serialize.guardarEnArchivo("sensores",sensores)
+=======
+>>>>>>> e34cf2b5a85f4010696ea98c08b1c18514a3feb5
         return sensores
