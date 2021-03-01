@@ -6,8 +6,8 @@ import Registros_MongoDB
 class ConexionMySQL:
     def __init__(self):
         try:
-            self.cnx = mysql.connector.connect(user='admin', 
-                                    password='123',
+            self.cnx = mysql.connector.connect(user='root', 
+                                    password='',
                                     host='127.0.0.1',
                                     database='Bullsito')
             
